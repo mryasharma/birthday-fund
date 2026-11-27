@@ -59,3 +59,21 @@ footer{border-top:1px solid #28251e;padding:24px 6%;display:flex;justify-content
 footer a{color:var(--gold)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:760px){.topbar{height:68px}.top-date{display:none}.hero{grid-template-columns:1fr;padding-top:60px;gap:42px}.hero-art{height:360px}.wishlist{padding:60px 0}.wish-card{grid-template-columns:1fr}.wish-image{min-height:280px}.wish-copy{padding:30px}.vibe-card{padding:36px 28px}.gift-details summary{padding:20px}.gift-content{padding:0 20px 22px}}
 @media(max-width:390px){.amount-grid{grid-template-columns:repeat(2,1fr)}.art-label,.art-caption{font-size:8px}h1{letter-spacing:-2px}}
+
+/* Sneaker mission progress meter */
+.progress-section{padding:0 0 85px}
+.progress-card{padding:34px 38px;background:linear-gradient(120deg,#19160f,#11100d);border:1px solid #514126}
+.progress-heading{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:28px}
+.progress-heading h2{font-family:"Playfair Display",serif;font-size:clamp(28px,4vw,40px);margin-top:8px}
+.progress-heading h2 em{color:var(--gold);font-style:italic}
+.live-tag{font-size:9px;letter-spacing:1.5px;color:#b5a27b;border:1px solid #4b3b20;padding:8px 11px;white-space:nowrap}
+.live-tag i{display:inline-block;width:6px;height:6px;background:#d5b36b;border-radius:50%;margin-right:7px;box-shadow:0 0 9px #d5b36b}
+.progress-numbers{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:16px}
+.progress-numbers strong{display:block;font-size:clamp(30px,5vw,43px);line-height:1.2;color:var(--gold2)}
+.progress-numbers span{display:block;font-size:9px;letter-spacing:1.5px;color:#968d7d;margin-top:6px}
+.target-number{text-align:right}.target-number strong{font-size:25px;color:#e6ddca}
+.progress-track{height:13px;border-radius:20px;background:#332d21;overflow:hidden;border:1px solid #51452e}
+.progress-track div{height:100%;width:0%;border-radius:20px;background:linear-gradient(90deg,#9c742e,#f0d69b);box-shadow:0 0 15px #c49b4b66;transition:width .7s ease}
+.progress-foot{display:flex;justify-content:space-between;margin-top:11px;color:var(--gold);font-size:10px;letter-spacing:1px;font-weight:700}
+.progress-caption{font-size:11px;color:#8e877a;margin-top:19px}
+@media(max-width:760px){.progress-section{padding-bottom:60px}.progress-card{padding:26px 20px}.progress-heading{align-items:flex-start;flex-direction:column}.progress-numbers strong{font-size:32px}.target-number strong{font-size:23px}}
