@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="description" content="Yash's birthday shoe fund. Help make this birthday special.">
+  <title>Yash's Birthday Fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <a class="brand" href="#">YASH<span>.</span></a>
+    <a class="top-link" href="#contribute">BE PART OF IT <span>↗</span></a>
+  </header>
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="spark">✦</span> 26 DECEMBER 2026 <span class="line"></span> BIRTHDAY WISH</p>
+        <h1>A little love.<br><em>A new pair.</em></h1>
+        <p class="lead">This birthday, I'm saving up for a pair of shoes I've had my eye on. If you'd like to be part of the gift, even a small contribution would mean a lot.</p>
+        <a class="gold-button" href="#contribute">MAKE MY DAY <span>↗</span></a>
+        <p class="small-note">No pressure, just gratitude. ❤️</p>
+      </div>
+      <div class="hero-art">
+        <div class="art-glow"></div>
+        <div class="art-label">THE BIRTHDAY EDITION <span>NO. 026</span></div>
+        <img src="assets/shoes.jpg" alt="Sneakers on my birthday wishlist" onerror="this.style.display='none';document.querySelector('.shoe-fallback').style.display='grid'">
+        <div class="shoe-fallback"><span>YOUR DREAM PAIR</span><b>👟</b><small>SHOES WISHLIST</small></div>
+        <div class="art-caption"><span>ONE STEP CLOSER</span><span>2026 / 12 / 26</span></div>
+      </div>
+    </section>
+    <section class="fund wrap" aria-labelledby="fund-title">
+      <div class="section-heading"><p class="eyebrow">01 / THE GOAL</p><h2 id="fund-title">Let's get there <em>together.</em></h2></div>
+      <div class="fund-panel">
+        <div class="fund-top">
+          <div><p class="muted">BIRTHDAY GIFT FUND</p><div class="raised" id="raised">₹0</div><p class="muted">raised so far</p></div>
+          <div class="goal"><p class="muted">MY TARGET</p><strong>₹5,000</strong></div>
+        </div>
+        <div class="track"><div id="progressFill"></div></div>
+        <div class="fund-bottom"><span id="percentage">0% funded</span><span id="remaining">₹5,000 to go</span></div>
+        <p class="progress-note">Progress is updated only after contributions are verified by Yash.</p>
+      </div>
+    </section>
+    <section class="wishlist wrap">
+      <div class="section-heading"><p class="eyebrow">02 / THE WISHLIST</p><h2>One thing on my <em>list.</em></h2></div>
+      <div class="wish-card">
+        <div class="wish-image"><img src="assets/shoes.jpg" alt="Sneakers wishlist" onerror="this.style.display='none';document.querySelector('.wish-placeholder').style.display='grid'"><div class="wish-placeholder">👟<span>ADD YOUR SHOE PHOTO</span></div><span class="image-stamp">THE PAIR I'M SAVING FOR</span></div>
+        <div class="wish-copy"><p class="eyebrow">BIRTHDAY WISHLIST / 001</p><h3>My dream<br><em>sneakers.</em></h3><p>Every contribution brings me a little closer to that fresh-pair feeling. I'll add the exact model here soon.</p><div class="wish-price"><span>FUND TARGET</span><b>₹5,000</b></div><a href="#contribute" class="text-link">HELP ME GET THERE ↗</a></div>
+      </div>
+    </section>
+    <section class="contribute wrap" id="contribute">
+      <div class="section-heading centered"><p class="eyebrow">03 / SEND SOME LOVE</p><h2>Make this birthday <em>special.</em></h2><p class="section-desc">Choose an amount, then pay using your UPI app. You can also scan the QR code below.</p></div>
+      <div class="pay-panel">
+        <div class="amount-grid">
+          <button class="amount" data-amount="100">₹100</button><button class="amount" data-amount="200">₹200</button><button class="amount" data-amount="500">₹500</button><button class="amount" data-amount="1000">₹1,000</button>
+        </div>
+        <label class="sr-only" for="customAmount">Custom contribution amount</label>
+        <input id="customAmount" type="number" min="1" max="5000" step="1" placeholder="Or enter a custom amount (₹)">
+        <button class="gold-button pay-button" id="payButton">CONTINUE TO UPI <span>↗</span></button>
+        <p class="payment-hint">UPI payment opens on a compatible device. Please verify the recipient name in your payment app before paying.</p>
+        <div class="qr-divider"><span>OR SCAN THE QR CODE</span></div>
+        <div class="qr-frame"><img src="assets/upi-qr.png" alt="Yash's UPI QR code" onerror="this.style.display='none';document.querySelector('.qr-placeholder').style.display='grid'"><div class="qr-placeholder"><b>QR</b><span>YASH'S UPI QR WILL APPEAR HERE</span></div></div>
+        <p class="qr-caption">Open Google Pay, PhonePe or Paytm and scan. Only use the QR code supplied by Yash.</p>
+      </div>
+      <p class="privacy-note">Contributions are voluntary. Never share your UPI PIN or OTP with anyone.</p>
+    </section>
+    <section class="thanks"><p class="eyebrow">A LITTLE NOTE</p><h2>Thank you for being<br><em>part of my story.</em></h2><p>Whether you contribute, share this page, or just send birthday wishes — I'm grateful. ❤️</p><span class="signature">— Yash Sharma</span></section>
+  </main>
+  <footer><span>YASH<span class="gold">.</span> / BIRTHDAY FUND 2026</span><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">BACK TO TOP ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
