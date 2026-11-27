@@ -1,6 +1,6 @@
 // Birthday fund progress — update only after confirming received payments.
 const SNEAKER_GOAL = 5000;
-const CONFIRMED_GIFTS = 2;
+const CONFIRMED_GIFTS = 137;
 
 const formatINR = value => "₹" + Number(value).toLocaleString("en-IN");
 const pct = Math.min(100, Number(((CONFIRMED_GIFTS / SNEAKER_GOAL) * 100).toFixed(2)));
