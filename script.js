@@ -3,7 +3,7 @@ const UPI_ID = "bhumisharma0623@oksbi";
 const UPI_NAME = "Bhumi Sharma";
 const MAX_GIFT = 5000;
 const SNEAKER_GOAL = 5000;
-const CONFIRMED_GIFTS = 0; // Update only after verifying actual payments.
+const CONFIRMED_GIFTS = 2; // Update only after verifying actual payments.
 
 const formatINR = value => "₹" + Number(value).toLocaleString("en-IN");
 const pct = Math.min(100, Math.round((CONFIRMED_GIFTS / SNEAKER_GOAL) * 100));
