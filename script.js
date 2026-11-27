@@ -3,7 +3,7 @@ const UPI_ID = "yash14867@okaxis";
 const UPI_NAME = "Yash Sharma";
 const MAX_GIFT = 5000;
 const SNEAKER_GOAL = 5000;
-const CONFIRMED_GIFTS = 0; // Update only after checking actual payments.
+const CONFIRMED_GIFTS = 0; // Only update after verifying received payments.
 
 const formatINR = value => "₹" + Number(value).toLocaleString("en-IN");
 const pct = Math.min(100, Math.round((CONFIRMED_GIFTS / SNEAKER_GOAL) * 100));
@@ -16,30 +16,58 @@ document.querySelector(".progress-track").setAttribute("aria-valuenow", CONFIRME
 
 let selectedAmount = 0;
 const custom = document.getElementById("customAmount");
+const display = document.getElementById("selectedAmountDisplay");
 const amountButtons = document.querySelectorAll(".amount");
+
+function showAmount(amount) {
+  display.textContent = amount ? "Selected amount: " + formatINR(amount) : "Select an amount to continue.";
+}
 
 amountButtons.forEach(button => {
   button.addEventListener("click", () => {
     selectedAmount = Number(button.dataset.amount);
     custom.value = "";
-    amountButtons.forEach(item => item.classList.toggle("active", item === button));
+    amountButtons.forEach(item => {
+      const active = item === button;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+    showAmount(selectedAmount);
   });
 });
 
 custom.addEventListener("input", () => {
   selectedAmount = 0;
-  amountButtons.forEach(button => button.classList.remove("active"));
+  amountButtons.forEach(button => {
+    button.classList.remove("active");
+    button.setAttribute("aria-pressed", "false");
+  });
+  const amount = Number(custom.value);
+  showAmount(custom.value && Number.isFinite(amount) && amount > 0 ? amount : 0);
 });
 
 document.getElementById("payButton").addEventListener("click", () => {
   const amount = custom.value.trim() ? Number(custom.value) : selectedAmount;
   if (!Number.isFinite(amount) || amount < 1 || amount > MAX_GIFT) {
-    alert("Choose an amount between ₹1 and ₹5,000.");
+    display.textContent = "Please select or enter an amount from ₹1 to ₹5,000.";
     return;
   }
-  const params = new URLSearchParams({
-    pa: UPI_ID, pn: UPI_NAME, am: amount.toFixed(2),
-    cu: "INR", tn: "Birthday sneaker boost"
-  });
-  window.location.href = "upi://pay?" + params.toString();
+
+  const params = new URLSearchParams();
+  params.set("pa", UPI_ID);
+  params.set("pn", UPI_NAME);
+  params.set("am", amount.toFixed(2));
+  params.set("cu", "INR");
+  params.set("tn", "Birthday sneaker boost");
+  const upiUrl = "upi://pay?" + params.toString();
+
+  // Use a real anchor click so mobile browsers can hand the UPI URI to an installed app.
+  const link = document.createElement("a");
+  link.href = upiUrl;
+  link.setAttribute(" aria-label", "Open UPI payment app");
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  display.textContent = "Opening UPI for " + formatINR(amount) + "… If nothing opens, scan the QR code below with another phone.";
 });
