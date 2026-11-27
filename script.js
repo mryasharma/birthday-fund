@@ -57,21 +57,14 @@ document.getElementById("payButton").addEventListener("click", () => {
   paymentParams.set("am", amount.toFixed(2));
   paymentParams.set("cu", "INR");
   paymentParams.set("tn", "Birthday sneaker boost");
-
-  // Always refresh the QR with the chosen amount as a fallback.
   const upiUri = "upi://pay?" + paymentParams.toString();
+
+  // Show the amount-specific QR instead of launching a deep link that may fail in some UPI apps.
   const qr = document.getElementById("qrImage");
   qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=" + encodeURIComponent(upiUri);
   document.getElementById("qrCaption").hidden = false;
   document.getElementById("qrCaption").textContent =
-    "QR ready for " + formatINR(amount) + ". If the UPI button does not open your app, scan this updated QR.";
-  display.textContent = "Opening UPI app for " + formatINR(amount) + " to " + UPI_NAME + "…";
-
-  // Use a real link navigation; browsers handle UPI intent links more consistently than location assignment.
-  const link = document.createElement("a");
-  link.href = upiUri;
-  link.style.display = "none";
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
+    "Scan this QR in GPay, PhonePe or another UPI app. Amount: " + formatINR(amount) + ".";
+  display.textContent = "QR ready for " + formatINR(amount) + ". Scan it with your UPI app to pay.";
+  document.getElementById("qrSlot").scrollIntoView({ behavior: "smooth", block: "center" });
 });
