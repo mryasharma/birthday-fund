@@ -59,27 +59,21 @@
 
     <section class="gift wrap" id="gift">
       <div class="gift-details">
-        <div class="gift-title"><span><small>03 / SNEAKER BOOST</small><b>Wanna contribute?</b><em>Pick an amount. No pressure, just good vibes.</em></span></div>
+        <div class="gift-title"><span><small>03 / SNEAKER BOOST</small><b>Wanna contribute?</b><em>Scan, pay, and keep the good vibes going.</em></span></div>
         <div class="gift-content">
-          <p>No pressure, no target meter, no awkwardness. If you genuinely want to chip in for the sneaker upgrade, you can choose an amount below.</p>
-          <div class="amount-grid">
-            <button type="button" class="amount" data-amount="100">₹100</button><button type="button" class="amount" data-amount="200">₹200</button><button type="button" class="amount" data-amount="500">₹500</button><button type="button" class="amount" data-amount="1000">₹1,000</button>
+          <p>No pressure, no awkwardness. If you want to chip in for the sneaker upgrade, you can pay using my Google Pay QR or copy my UPI ID.</p>
+          <p class="receiver-name">GOOGLE PAY · YASH SHARMA</p>
+          <div class="qr-slot" id="qrSlot">
+            <img id="qrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=600x600&format=png&data=upi%3A%2F%2Fpay%3Fpa%3Dyash14867%40okhdfcbank%26pn%3DYash%2520Sharma%26aid%3DuGICAgMDW3Ofybg" alt="Original Google Pay UPI QR for Yash Sharma" />
           </div>
-          <p id="selectedAmountDisplay" class="selected-amount" aria-live="polite">Select an amount to continue.</p>
-          <label class="sr-only" for="customAmount">Custom gift amount</label>
-          <input id="customAmount" type="number" min="1" max="5000" step="1" placeholder="Or enter any amount (₹)">
-          <button type="button" class="gold-button pay-button" id="payButton">SEND A SNEAKER BOOST <span>↗</span></button>
-          <p class="payment-hint">Opens your UPI app directly. Enter your chosen amount and verify Bhumi Sharma before confirming.</p>
-          <p class="receiver-name">TEST PAYMENT ACCOUNT · BHUMI SHARMA</p>
-          <div class="qr-slot" id="qrSlot"><img id="qrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=upi%3A%2F%2Fpay%3Fpa%3Dbhumisharma0623%40oksbi%26pn%3DBhumi%2520Sharma%26cu%3DINR" alt="Bhumi Sharma UPI QR code"></div>
-          <p class="upi-id-line" id="upiIdLine">UPI ID: <strong>bhumisharma0623@oksbi</strong></p>
-          <p class="receiver-name" id="receiverName">Paying Bhumi Sharma</p>
-          <p class="qr-caption" id="qrCaption" hidden>Scan using your preferred UPI app.</p>
-          <p class="privacy-note">Only use the UPI details shown here. Never share your UPI PIN or OTP.</p>
+          <a class="gold-button qr-download" href="https://api.qrserver.com/v1/create-qr-code/?size=600x600&format=png&data=upi%3A%2F%2Fpay%3Fpa%3Dyash14867%40okhdfcbank%26pn%3DYash%2520Sharma%26aid%3DuGICAgMDW3Ofybg" target="_blank" rel="noopener" download="Yash-Sharma-GPay-QR.png">DOWNLOAD QR <span>↓</span></a>
+          <p class="upi-id-line">UPI ID: <strong id="upiIdText">yash14867@okhdfcbank</strong></p>
+          <button type="button" class="gold-button copy-upi" id="copyUpiButton">COPY UPI ID</button>
+          <p class="copy-status" id="copyStatus" aria-live="polite">You can paste this ID in any UPI app.</p>
+          <p class="privacy-note">Please verify the recipient name is Yash Sharma before paying. Never share your UPI PIN or OTP.</p>
         </div>
       </div>
     </section>
-
 
     <section class="vibe wrap">
       <div class="vibe-card"><span class="vibe-number">02</span><p class="eyebrow">THE TERMS & CONDITIONS</p><h2>Gifts are optional.<br><em>Roasting is mandatory.</em></h2><p>Show up, send a meme, drop a birthday wish, or simply pretend I'm still 18. That's the whole assignment.</p><span class="signature">— Yash Sharma</span></div>
@@ -88,6 +82,6 @@
     <section class="thanks"><p class="eyebrow">THAT'S THE WHOLE VIBE</p><h2>See you on<br><em>the birthday side.</em></h2><p>26 December 2026. Bring your best wishes and worst jokes.</p><span class="signature">Yash ✌️</span></section>
   </main>
   <footer><span>YASH<span class="gold">.</span> / BIRTHDAY WISHLIST 2026</span><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">BACK TO TOP ↑</a></footer>
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
