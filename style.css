@@ -77,3 +77,11 @@ footer a{color:var(--gold)}.sr-only{position:absolute;width:1px;height:1px;paddi
 .progress-foot{display:flex;justify-content:space-between;margin-top:11px;color:var(--gold);font-size:10px;letter-spacing:1px;font-weight:700}
 .progress-caption{font-size:11px;color:#8e877a;margin-top:19px}
 @media(max-width:760px){.progress-section{padding-bottom:60px}.progress-card{padding:26px 20px}.progress-heading{align-items:flex-start;flex-direction:column}.progress-numbers strong{font-size:32px}.target-number strong{font-size:23px}}
+
+/* Always-visible contribution panel */
+.gift-title{padding:23px 27px 0}
+.gift-title small,.gift-title b,.gift-title em{display:block}
+.gift-title small{font-size:9px;letter-spacing:2px;color:var(--gold);font-weight:700}
+.gift-title b{font-family:"Playfair Display",serif;font-size:25px;font-weight:600;margin:5px 0}
+.gift-title em{font-size:11px;color:#938b7d;font-style:normal}
+@media(max-width:760px){.gift-title{padding:20px 20px 0}.gift-title b{font-size:23px}}
