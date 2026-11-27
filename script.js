@@ -61,13 +61,7 @@ document.getElementById("payButton").addEventListener("click", () => {
   params.set("tn", "Birthday sneaker boost");
   const upiUrl = "upi://pay?" + params.toString();
 
-  // Use a real anchor click so mobile browsers can hand the UPI URI to an installed app.
-  const link = document.createElement("a");
-  link.href = upiUrl;
-  link.setAttribute("aria-label", "Open UPI payment app");
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-
-  display.textContent = "Opening UPI for " + formatINR(amount) + "… If nothing opens, scan the QR code below with another phone.";
+  // Navigate directly from the user's tap; synthetic anchor clicks can be blocked on mobile browsers.
+  display.textContent = "Opening your UPI app for " + formatINR(amount) + "…";
+  window.location.href = upiUrl;
 });
