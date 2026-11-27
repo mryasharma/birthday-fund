@@ -1,5 +1,5 @@
 // UPI payment setup for Yash's Birthday Fund
-const UPI_ID = "yash14867@okaxis";
+const UPI_ID = "yash14867@okhdfcbank";
 const UPI_NAME = "Yash Sharma";
 const MAX_GIFT = 5000;
 const SNEAKER_GOAL = 5000;
