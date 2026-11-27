@@ -64,7 +64,7 @@ document.getElementById("payButton").addEventListener("click", () => {
   // Use a real anchor click so mobile browsers can hand the UPI URI to an installed app.
   const link = document.createElement("a");
   link.href = upiUrl;
-  link.setAttribute(" aria-label", "Open UPI payment app");
+  link.setAttribute("aria-label", "Open UPI payment app");
   document.body.appendChild(link);
   link.click();
   link.remove();
