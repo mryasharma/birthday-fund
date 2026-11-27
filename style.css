@@ -85,3 +85,6 @@ footer a{color:var(--gold)}.sr-only{position:absolute;width:1px;height:1px;paddi
 .gift-title b{font-family:"Playfair Display",serif;font-size:25px;font-weight:600;margin:5px 0}
 .gift-title em{font-size:11px;color:#938b7d;font-style:normal}
 @media(max-width:760px){.gift-title{padding:20px 20px 0}.gift-title b{font-size:23px}}
+
+.selected-amount{min-height:24px;margin:10px 0 2px;color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.3px}
+.amount:focus-visible,.pay-button:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
