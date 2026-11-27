@@ -1,5 +1,5 @@
 // UPI payment setup for Yash's Birthday Fund
-const UPI_ID = "8788296392@yesg";
+const UPI_ID = "8788296392@upi";
 const UPI_NAME = "YASH MOHANSHYAM SHARMA";
 const MAX_GIFT = 5000;
 const SNEAKER_GOAL = 5000;
