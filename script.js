@@ -51,20 +51,22 @@ document.getElementById("payButton").addEventListener("click", () => {
     return;
   }
 
-  const paymentParams = new URLSearchParams();
-  paymentParams.set("pa", UPI_ID);
-  paymentParams.set("pn", UPI_NAME);
-  paymentParams.set("am", amount.toFixed(2));
-  paymentParams.set("cu", "INR");
-  paymentParams.set("tn", "Birthday sneaker boost");
-  const upiUri = "upi://pay?" + paymentParams.toString();
+  // Match the working static QR flow: send only the receiver details.
+  // Some personal UPI IDs/apps reject browser intents when an amount is pre-filled.
+  const params = new URLSearchParams({
+    pa: UPI_ID,
+    pn: UPI_NAME,
+    cu: "INR"
+  });
+  const upiUri = "upi://pay?" + params.toString();
 
-  // Show the amount-specific QR instead of launching a deep link that may fail in some UPI apps.
-  const qr = document.getElementById("qrImage");
-  qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=" + encodeURIComponent(upiUri);
+  display.textContent = "Opening your UPI app. Enter " + formatINR(amount) + " there and confirm the recipient is " + UPI_NAME + ".";
   document.getElementById("qrCaption").hidden = false;
   document.getElementById("qrCaption").textContent =
-    "Scan this QR in GPay, PhonePe or another UPI app. Amount: " + formatINR(amount) + ".";
-  display.textContent = "QR ready for " + formatINR(amount) + ". Scan it with your UPI app to pay.";
-  document.getElementById("qrSlot").scrollIntoView({ behavior: "smooth", block: "center" });
+    "Backup: scan this QR from another device. Enter " + formatINR(amount) + " manually.";
+  const qr = document.getElementById("qrImage");
+  qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=" + encodeURIComponent(upiUri);
+
+  // Navigate directly from the user's tap to the generic UPI chooser.
+  window.location.href = upiUri;
 });
