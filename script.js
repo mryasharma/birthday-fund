@@ -1,7 +1,7 @@
 // Add Yash's real UPI ID only when ready. Never publish a guessed payment address.
 const UPI_ID = "";
 const UPI_NAME = "Yash Sharma";
-const MAX_GIFT = 5000;
+const MAX_GIFT = 5000;\nconst SNEAKER_GOAL = 5000;\nconst CONFIRMED_GIFTS = 0; // Increase only after confirming UPI payments.\n\nconst formatINR = value => "₹" + Number(value).toLocaleString("en-IN");\nconst pct = Math.min(100, Math.round((CONFIRMED_GIFTS / SNEAKER_GOAL) * 100));\ndocument.getElementById("raisedAmount").textContent = formatINR(CONFIRMED_GIFTS);\ndocument.getElementById("goalAmount").textContent = formatINR(SNEAKER_GOAL);\ndocument.getElementById("fundProgress").style.width = pct + "%";\ndocument.getElementById("progressPercent").textContent = pct + "% COMPLETE";\ndocument.getElementById("leftAmount").textContent = formatINR(Math.max(0, SNEAKER_GOAL - CONFIRMED_GIFTS)) + " TO GO";\ndocument.querySelector(".progress-track").setAttribute("aria-valuenow", CONFIRMED_GIFTS);
 let selectedAmount = 0;
 const custom = document.getElementById("customAmount");
 
