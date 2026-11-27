@@ -88,3 +88,7 @@ footer a{color:var(--gold)}.sr-only{position:absolute;width:1px;height:1px;paddi
 
 .selected-amount{min-height:24px;margin:10px 0 2px;color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.3px}
 .amount:focus-visible,.pay-button:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+
+.upi-id-line{margin:12px 0 0;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.3px}
+.upi-id-line strong{color:var(--gold2);font-weight:700;user-select:all}
+.qr-slot img{max-width:260px;height:auto;display:block;margin:0 auto}
